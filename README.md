@@ -44,18 +44,13 @@ Displays result instantly
 
 * JavaScript (DOM Manipulation)
 
-## Project Structure
-Calculator/
-│
-├── calculator.html
-└── README.md
- Grade Logic
+
 ## Marks Range	Grade
-90+	A 😄🤩
-75 - 89	B 🤩
-50 - 74	C 😄
-35 - 49	Pass 😊
-Below 35	Fail 😢
+* 90+	A 😄🤩
+* 75 - 89	B 🤩
+* 50 - 74	C 😄
+* 35 - 49	Pass 😊
+* Below 35	Fail 😢
 ## How to Run
 
 * Download or clone the repository
