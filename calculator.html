@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            background-color: rgb(179, 128, 61);
+            justify-items: center;
+        }
+        .cal, .simple{
+            border: 2px solid;
+            width: 200px;
+            padding: 30px;
+            align-items: center;
+            background-color: rgb(242, 238, 198);
+            border-radius: 30px;
+            box-shadow: 0px 30px 20px rgba(0,0,0,0.2);
+            transition: 0.4s;
+            animation: fadeln 1s ease-in;
+        }
+        @keyframes fadeln {
+            from{
+                opacity: 0px;
+                transform: translatey(30px);
+            }
+            to{
+                opacity: 1px;
+                transform: translateY(0px);
+            }
+        }
+        .btn, #a, #b, #c, #d{
+            background-color: rgb(197, 229, 207);
+            padding: 5px;
+            border: 2px solid black;
+            border-radius: 5px;
+            box-shadow: 2px 2px;
+        }
+        .btn:hover{
+            transform: scale(1.07);
+            background-color: rgb(89, 144, 144);
+        }
+        #a:hover{
+            transform: scale(1.2);
+            background-color: rgb(89, 144, 144);
+        }
+        #b:hover{
+            transform: scale(1.2);
+            background-color: rgb(89, 144, 144);
+        }
+        #c:hover{
+            transform: scale(1.2);
+            background-color: rgb(89, 144, 144);
+        }
+        #d:hover{
+            transform: scale(1.2);
+            background-color: rgb(89, 144, 144);
+        }
+        #marks, #num1, #num2{
+            padding: 5px;
+            background-color: rgb(243, 235, 232);
+            border-radius: 15px;
+            box-shadow: 2px 2px;
+        }
+        h2, h3{
+            color: rgb(127, 50, 50);
+        }
+        .btnsss{
+            display: flex;
+            gap: 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="cal">
+    <h2>Grade Calculator</h2>
+    <input type="number" id="marks" placeholder="Enter your Marks">
+    <br><br>
+    <button onclick="calculate()" class="btn">Check Grade</button>
+    <h3 id="result"></h3>
+        </div>
+
+        <br><br><br><br>
+
+        <div class="simple">
+            <h2>Simple Calculator</h2>
+            <input type="number" id="num1" placeholder="Enter a value"><br><br>
+            <input type="number" id="num2" placeholder="Enter b value"><br><br>
+            <div class="btnsss">
+            <button id="a" onclick="add()">+</button>
+            <button id="b" onclick="sub()">-</button>
+            <button id="c" onclick="multi()">x</button>
+            <button id="d" onclick="div()">/</button>
+            </div>
+            <h3 id="op"></h3>
+        </div>
+
+    <script>
+        function calculate(){
+            let marks=document.getElementById("marks").value;     //user input
+            let grade;
+
+            if (marks >=90) {
+                grade="A 😄🤩";
+            }
+            else if(marks>=75){
+                grade="B 🤩";
+            }
+            else if(marks>=50){
+                grade="C 😄";
+            }
+            else if(marks>=35){
+                grade="Pass 😊";
+            }
+            else{
+                grade="Fail 😢";
+            }
+            document.getElementById("result").innerHTML="Grade :"+grade;
+
+            if(grade==Fail){
+                document.style.background="red";
+            }
+        }
+
+        function add(){
+            let a=Number(document.getElementById("num1").value);
+            let b=Number(document.getElementById("num2").value);
+            let res=a+b;
+            document.getElementById("op").innerHTML="Result: "+res;
+        }
+        function sub(){
+            let a=Number(document.getElementById("num1").value);
+            let b=Number(document.getElementById("num2").value);
+            let res=a-b;
+            document.getElementById("op").innerHTML="Result: "+res;
+        }
+        function multi(){
+            let a=Number(document.getElementById("num1").value);
+            let b=Number(document.getElementById("num2").value);
+            let res=a*b;
+            document.getElementById("op").innerHTML="Result: "+res;
+        }
+        function div(){
+            let a=Number(document.getElementById("num1").value);
+            let b=Number(document.getElementById("num2").value);
+            let res=a/b;
+            document.getElementById("op").innerHTML="Result: "+res;
+        }
+
+
+    </script>
+</body>
+</html>
